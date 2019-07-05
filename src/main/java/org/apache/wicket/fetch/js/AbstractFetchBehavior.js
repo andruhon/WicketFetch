@@ -4,8 +4,8 @@ export default class AbstractFetchBehavior {
         console.log("AbstractFetchBehavior")
     }
 
-    registerCallback(callback) {
-        AbstractFetchBehavior.registeredCallbacks.add(callback);
+    registerCallback(name, callback) {
+        AbstractFetchBehavior.registeredCallbacks[name] = callback;
     }
 
     bind() {
@@ -23,4 +23,4 @@ export default class AbstractFetchBehavior {
     }
 
 }
-AbstractFetchBehavior.registeredCallbacks = new Set();
+AbstractFetchBehavior.registeredCallbacks = {};
